@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build frontend after video update",
+			"command": "cd VINFAST && npm run build",
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "Start Development Server",
+			"command": "cd VINFAST && npm run dev",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"label": "Start Full Stack Server",
+			"command": "cd VINFAST && npm run dev:full",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"type": "shell",
+			"label": "Restart Server Now",
+			"command": "cd VINFAST && npm run dev:full",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

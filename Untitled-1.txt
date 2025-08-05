@@ -1,0 +1,2 @@
+cd "C:\VINFAST - VGREEN\VINFAST"
+node serve-static.js
