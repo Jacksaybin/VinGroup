@@ -10,5 +10,8 @@
     "build": "vite build",
     "serve": "vite preview"
   },
-  "server": {}
+  "server": {},
+  "devDependencies": {
+    "vite": "^7.0.6"
+  }
 }
