@@ -1,0 +1,4 @@
+[build]
+  base    = "VINFAST/client"
+  publish = "dist"
+  command = "npm run build"
