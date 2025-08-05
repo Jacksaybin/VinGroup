@@ -1,0 +1,9 @@
+@echo off
+cd /d "c:\VINFAST - VGREEN\VINFAST"
+echo Starting VinFast V-Green Development Server...
+echo Setting environment variables...
+set NODE_ENV=development
+set PORT=5173
+echo Starting Vite dev server...
+call npm run dev
+pause

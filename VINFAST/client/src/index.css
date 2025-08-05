@@ -1,0 +1,440 @@
+/* Enhanced Menu Tab Effects - Banana Green Theme */
+.menu-tab {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffffff, #fafbff);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform, box-shadow, background;
+}
+
+.menu-tab:hover {
+  background: linear-gradient(135deg, #f7fee7, #ecfccb, #f7fee7);
+  box-shadow: 0 8px 25px rgba(132, 204, 22, 0.25), 0 4px 12px rgba(163, 230, 53, 0.15);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.menu-tab.active {
+  background: linear-gradient(135deg, #a3e635, #84cc16, #65a30d);
+  box-shadow: 0 10px 30px rgba(132, 204, 22, 0.4), 0 6px 15px rgba(132, 204, 22, 0.2);
+  transform: scale(1.05);
+}
+
+/* Ripple effect on click */
+.menu-tab::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.3), transparent);
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease-out;
+}
+
+.menu-tab:active::after {
+  width: 200px;
+  height: 200px;
+}
+
+/* Smooth pulse animation for active state */
+@keyframes gentle-pulse {
+  0%, 100% { 
+    box-shadow: 0 10px 30px rgba(132, 204, 22, 0.4), 0 6px 15px rgba(132, 204, 22, 0.2);
+  }
+  50% { 
+    box-shadow: 0 12px 35px rgba(132, 204, 22, 0.5), 0 8px 20px rgba(132, 204, 22, 0.3);
+  }
+}
+
+.menu-tab.active {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+/* Icon rotation and scale effects */
+.menu-tab-icon {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.menu-tab:hover .menu-tab-icon {
+  transform: rotate(12deg) scale(1.2);
+  filter: drop-shadow(0 2px 4px rgba(132, 204, 22, 0.3));
+}
+
+.menu-tab.active .menu-tab-icon {
+  transform: rotate(6deg) scale(1.15);
+  filter: drop-shadow(0 3px 6px rgba(255, 255, 255, 0.5));
+}
+
+/* Text shimmer effect */
+.menu-tab-text {
+  background: linear-gradient(90deg, currentColor 0%, currentColor 100%);
+  background-size: 200% 100%;
+  transition: all 0.4s ease;
+}
+
+.menu-tab:hover .menu-tab-text {
+  background: linear-gradient(90deg, #84cc16 0%, #a3e635 50%, #65a30d 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Enhanced border radius for modern look */
+.menu-tab {
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-tab:hover {
+  border: 1px solid rgba(132, 204, 22, 0.3);
+}
+
+.menu-tab.active {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.fa, .fas, .far, .fal, .fab, [class^="fa-"] {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900 !important;
+  color: inherit !important;
+}
+/* Hiệu ứng cho nav-item */
+/* Nút và ô màu xám mờ */
+.nav-item {
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  background-color: #f3f4f6 !important; /* Tailwind gray-100 */
+  color: #333333 !important;
+}
+/* Hiệu ứng xanh nõn chuối khi hover hoặc bấm */
+.nav-item:hover, .btn-faded-gray:hover {
+  background-color: #d4ff4f !important; /* xanh nõn chuối */
+  color: #005B33 !important;
+  text-decoration: underline;
+}
+.nav-item:active, .btn-faded-gray:active {
+  background-color: #d4ff4f !important;
+  color: #005B33 !important;
+  transform: scale(1.05);
+}
+
+/* Các ô input, card, section... */
+.bg-faded-gray {
+  background-color: #f3f4f6 !important; /* Tailwind gray-100 */
+}
+.btn-faded-gray {
+  background-color: #f3f4f6 !important;
+  color: #333 !important;
+  border: 1px solid #e5e7eb;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-faded-gray:hover {
+  background-color: #e5e7eb !important;
+  color: #005B33 !important;
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.custom-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  font-family: 'Roboto', Arial, sans-serif !important;
+  color: #333333 !important;
+}
+
+* {
+  font-family: 'Roboto', Arial, sans-serif !important;
+  color: #333333 !important;
+}
+
+:root {
+  --background: #fff;
+  --foreground: #84cc16;
+  --muted: #f7fee7;
+  --muted-foreground: #365314;
+  --popover: #fff;
+  --popover-foreground: #84cc16;
+  --card: #fff;
+  --card-foreground: #84cc16;
+  --border: #ecfccb;
+  --input: #ecfccb;
+  --primary: #84cc16;
+  --primary-foreground: #fff;
+  --secondary: #f7fee7;
+  --secondary-foreground: #365314;
+  --accent: #a3e635;
+  --accent-foreground: #365314;
+  --destructive: #ef4444;
+  --destructive-foreground: #fff;
+  --ring: #84cc16;
+  --radius: 0.5rem;
+  /* Banana Green theme colors */
+  --banana-main: #84cc16;
+  --banana-light: #f7fee7;
+  --banana-dark: #365314;
+  --banana-accent: #a3e635;
+  --success: #84cc16;
+  --warning: #facc15;
+  --lime-light: #f7fee7;
+  --spring-light: #ecfccb;
+  /* VGreen colors updated to banana green */
+  --vgreen-primary: 132, 204, 22;
+  --vgreen-secondary: 163, 230, 53;
+  --vgreen-accent: 190, 242, 100;
+  --vinfast-red: 239, 68, 68;
+  /* Typography colors */
+  --text-title: #1B4B33;
+  --text-body: #3B5C45;
+  --text-light: #6B8E6F;
+}
+
+/* Typography Utilities */
+.text-title {
+  color: var(--text-title);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-body {
+  color: var(--text-body);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.text-light {
+  color: var(--text-light);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* Title Sizes */
+.text-title-lg {
+  font-size: 2.25rem; /* 36px */
+  line-height: 2.5rem;
+}
+
+.text-title-md {
+  font-size: 2rem; /* 32px */
+  line-height: 2.25rem;
+}
+
+.text-title-sm {
+  font-size: 1.75rem; /* 28px */
+  line-height: 2rem;
+}
+
+/* Body Text Sizes */
+.text-body-lg {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+}
+
+.text-body-md {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+}
+
+.text-body-sm {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.4;
+}
+
+/* Soft rounded corners for modern feel */
+.rounded-soft {
+  border-radius: 12px;
+}
+
+.rounded-soft-sm {
+  border-radius: 8px;
+}
+
+.rounded-soft-lg {
+  border-radius: 16px;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Roboto', 'Arial', 'Helvetica Neue', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--banana-main) 0%, var(--banana-accent) 50%, var(--banana-light) 100%);
+  }
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(132, 204, 22, 0.08);
+    border: 1px solid rgba(132, 204, 22, 0.15);
+  }
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(132, 204, 22, 0.15);
+  }
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  .font-jakarta {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .text-blue-main {
+    color: var(--blue-main);
+  }
+  .bg-blue-main {
+    background-color: var(--blue-main);
+  }
+  .bg-blue-light {
+    background-color: var(--blue-light);
+  }
+  .border-blue-main {
+    border-color: var(--blue-main);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes zoom-in-out {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-zoom-in-out {
+  animation: zoom-in-out 6s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.text-vgreen-primary {
+  color: var(--vgreen-primary);
+}
+
+.text-vgreen-secondary {
+  color: var(--vgreen-secondary);
+}
+
+.text-vgreen-accent {
+  color: var(--vgreen-accent);
+}
+
+.text-vinfast-red {
+  color: var(--vinfast-red);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.bg-vgreen-primary {
+  background-color: var(--vgreen-primary);
+}
+
+.bg-vgreen-secondary {
+  background-color: var(--vgreen-secondary);
+}
+
+.bg-vgreen-accent {
+  background-color: var(--vgreen-accent);
+}
+
+.bg-vinfast-red {
+  background-color: var(--vinfast-red);
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+
+.border-vgreen-primary {
+  border-color: var(--vgreen-primary);
+}
+
+.hover\:bg-vgreen-secondary:hover {
+  background-color: var(--vgreen-secondary);
+}
+
+.hover\:text-vgreen-primary:hover {
+  color: var(--vgreen-primary);
+}
+
+.focus\:ring-vgreen-primary:focus {
+  --tw-ring-color: var(--vgreen-primary);
+}

@@ -1,0 +1,10 @@
+// Thêm touch swipe cho mobile
+import { useSwipeable } from 'react-swipeable';
+
+const handlers = useSwipeable({
+  onSwipedLeft: () => scrollToNext(),
+  onSwipedRight: () => scrollToPrev(),
+  trackMouse: true
+});
+
+<div {...handlers} className="overflow-x-auto">
