@@ -4,9 +4,9 @@
   "description": "VinFast V-Green Investment Platform API Server",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/server.js"
-  },
+  "build": "tsc",
+  "start": "node dist/server.js"
+},
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
